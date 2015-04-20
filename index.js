@@ -26,7 +26,11 @@ function getClientX (e) {
 	return e.clientX;
 }
 
-module.exports = {
-	x: getClientX,
-	y: getClientY
-};
+function getClientXY (e) {
+	return [getClientX(e), getClientY(e)];
+}
+
+getClientXY.x = getClientX;
+getClientXY.y = getClientY;
+
+module.exports = getClientXY;
