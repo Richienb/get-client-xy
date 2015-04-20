@@ -1,0 +1,28 @@
+{
+  "name": "get-client-xy",
+  "version": "1.0.0",
+  "description": "Get clientX/clientY from an event",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dfcreative/get-client-xy"
+  },
+  "keywords": [
+    "event",
+    "clientRect",
+    "touch",
+    "mousedown",
+    "mouse",
+    "mouseevent",
+    "getBoundingClientRect"
+  ],
+  "author": "Deema Ywanov <dfcreative@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dfcreative/get-client-xy/issues"
+  },
+  "homepage": "https://github.com/dfcreative/get-client-xy"
+}
