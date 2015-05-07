@@ -1,6 +1,6 @@
 {
   "name": "get-client-xy",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Get clientX/clientY from an event",
   "main": "index.js",
   "scripts": {
