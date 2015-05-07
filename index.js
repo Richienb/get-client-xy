@@ -11,7 +11,7 @@ function getClientY (e, idx) {
 	idx = idx || 0;
 
 	// touch event
-	if (e.targetTouches && (e.targetTouches.length >= 1)) {
+	if (e.targetTouches && (e.targetTouches.length > idx)) {
 		return e.targetTouches[idx].clientY;
 	}
 
@@ -22,7 +22,7 @@ function getClientX (e, idx) {
 	idx = idx || 0;
 
 	// touch event
-	if (e.targetTouches && (e.targetTouches.length >= 1)) {
+	if (e.targetTouches && (e.targetTouches.length > idx)) {
 		return e.targetTouches[idx].clientX;
 	}
 
