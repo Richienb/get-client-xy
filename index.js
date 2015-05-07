@@ -1,5 +1,7 @@
 /**
- * get clientY/clientY from event
+ * Get clientY/clientY from an event.
+ * If index is passed, treat it as index of global touches, not the targetTouches.
+ * It is because global touches are more generic.
  *
  * @module get-client-xy
  *
@@ -11,8 +13,13 @@ function getClientY (e, idx) {
 	idx = idx || 0;
 
 	// touch event
-	if (e.targetTouches && (e.targetTouches.length > idx)) {
-		return e.targetTouches[idx].clientY;
+	if (e.touches) {
+		if (idx !== undefined) {
+			return e.touches[idx].clientY;
+		}
+		else {
+			return e.targetTouches[0].clientY;
+		}
 	}
 
 	// mouse event
@@ -22,8 +29,13 @@ function getClientX (e, idx) {
 	idx = idx || 0;
 
 	// touch event
-	if (e.targetTouches && (e.targetTouches.length > idx)) {
-		return e.targetTouches[idx].clientX;
+	if (e.touches) {
+		if (idx !== undefined) {
+			return e.touches[idx].clientX;
+		}
+		else {
+			return e.targetTouches[0].clientX;
+		}
 	}
 
 	// mouse event
