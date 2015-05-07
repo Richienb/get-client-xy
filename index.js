@@ -10,11 +10,9 @@
  * @return {number} Coordinate relative to the screen
  */
 function getClientY (e, idx) {
-	idx = idx || 0;
-
 	// touch event
 	if (e.touches) {
-		if (idx !== undefined) {
+		if (arguments.length > 1) {
 			return e.touches[idx].clientY;
 		}
 		else {
@@ -26,11 +24,9 @@ function getClientY (e, idx) {
 	return e.clientY;
 }
 function getClientX (e, idx) {
-	idx = idx || 0;
-
 	// touch event
 	if (e.touches) {
-		if (idx !== undefined) {
+		if (arguments.length > 1) {
 			return e.touches[idx].clientX;
 		}
 		else {
