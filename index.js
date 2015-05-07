@@ -7,27 +7,31 @@
  *
  * @return {number} Coordinate relative to the screen
  */
-function getClientY (e) {
+function getClientY (e, idx) {
+	idx = idx || 0;
+
 	// touch event
 	if (e.targetTouches && (e.targetTouches.length >= 1)) {
-		return e.targetTouches[0].clientY;
+		return e.targetTouches[idx].clientY;
 	}
 
 	// mouse event
 	return e.clientY;
 }
-function getClientX (e) {
+function getClientX (e, idx) {
+	idx = idx || 0;
+
 	// touch event
 	if (e.targetTouches && (e.targetTouches.length >= 1)) {
-		return e.targetTouches[0].clientX;
+		return e.targetTouches[idx].clientX;
 	}
 
 	// mouse event
 	return e.clientX;
 }
 
-function getClientXY (e) {
-	return [getClientX(e), getClientY(e)];
+function getClientXY (e, idx) {
+	return [getClientX(e, idx), getClientY(e, idx)];
 }
 
 getClientXY.x = getClientX;
