@@ -1,7 +1,7 @@
 /**
  * Get clientY/clientY from an event.
  * If index is passed, treat it as index of global touches, not the targetTouches.
- * It is because global touches are more generic.
+ * Global touches include target touches.
  *
  * @module get-client-xy
  *
@@ -39,7 +39,7 @@ function getClientX (e, idx) {
 }
 
 function getClientXY (e, idx) {
-	return [getClientX(e, idx), getClientY(e, idx)];
+	return [getClientX.apply(this, arguments), getClientY.apply(this, arguments)];
 }
 
 getClientXY.x = getClientX;
