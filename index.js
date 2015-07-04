@@ -12,7 +12,7 @@
 function getClientY (e, idx) {
 	// touch event
 	if (e.touches) {
-		if (arguments.length > 1) {
+		if (arguments.length > idx) {
 			return e.touches[idx].clientY;
 		}
 		else {
@@ -26,7 +26,7 @@ function getClientY (e, idx) {
 function getClientX (e, idx) {
 	// touch event
 	if (e.touches) {
-		if (arguments.length > 1) {
+		if (arguments.length > idx) {
 			return e.touches[idx].clientX;
 		}
 		else {
