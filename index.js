@@ -13,10 +13,13 @@ function getClientY (e, idx) {
 	// touch event
 	if (e.touches) {
 		if (arguments.length > 1) {
-			return findTouch(e.touches, idx).clientY
+            return findTouch(e.touches, idx).clientY;
 		}
 		else {
-			return e.targetTouches[0].clientY;
+            if(e.touches.length)
+                return e.targetTouches[0].clientY;
+            else
+                return e.changedTouches[0].clientY;
 		}
 	}
 
@@ -30,7 +33,10 @@ function getClientX (e, idx) {
 			return findTouch(e.touches, idx).clientX;
 		}
 		else {
-			return e.targetTouches[0].clientX;
+            if(e.touches.length)
+                return e.targetTouches[0].clientX;
+            else
+                return e.changedTouches[0].clientX;
 		}
 	}
 
@@ -56,3 +62,4 @@ getClientXY.y = getClientY;
 getClientXY.findTouch = findTouch;
 
 module.exports = getClientXY;
+console.log('my');
