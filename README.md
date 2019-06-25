@@ -1,18 +1,12 @@
-# Get clientX/clientY
-
-`$ npm install get-client-xy`
+# Get clientXY
 
 ```js
-var getClientX = require('get-client-xy').x;
-var getClientY = require('get-client-xy').y;
+import eToXy from 'get-client-xy';
 
-on(document, 'touch mousedown', function (e) {
-	var clientX = getClientX(e);
-	...
+document.addEventListener('touchstart', (event) =>{
+    console.log(eToXy(event)); // -> [42, 142]
 });
+
 ```
 
-Pass optionally index as a second argument to getClient to retrieve touch by that index.
-
-
-[![NPM](https://nodei.co/npm/get-client-xy.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/get-client-xy/)
+Fetches `event.originalEvent` or `event.detail.originalEvent` if there is one in an `event`.
