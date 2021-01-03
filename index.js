@@ -26,10 +26,10 @@ const getClientLocation = (event, propertyName) => {
 const getClientXY = event => {
 	event = getOriginalEvent(event)
 
-	return {
-		x: getClientLocation(event, "clientX"),
-		y: getClientLocation(event, "clientY")
-	}
+	return [
+		getClientLocation(event, "clientX"),
+		getClientLocation(event, "clientY")
+	]
 }
 
-module.exports = getClientXY
+export default getClientXY

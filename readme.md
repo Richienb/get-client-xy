@@ -15,7 +15,7 @@ npm install get-client-xy
 ```js
 const getClientXY = require("get-client-xy")
 
-const {x, y} = getClientXY(event)
+const [x, y] = getClientXY(event)
 ```
 
 ## API

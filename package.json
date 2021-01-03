@@ -34,6 +34,7 @@
     "ava": "^3.14.0",
     "browser-env": "^3.3.0",
     "eslint-config-richienb": "^0.5.0",
+    "esm": "^3.2.25",
     "xo": "^0.36.1"
   },
   "xo": {

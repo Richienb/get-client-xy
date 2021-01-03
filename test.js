@@ -1,5 +1,5 @@
 const test = require("ava")
-const getClientXY = require(".")
+const { default: getClientXY } = require("esm")(module)(".")
 
 require("browser-env")()
 
@@ -7,10 +7,7 @@ test("main", t => {
 	t.deepEqual(getClientXY(new MouseEvent("click", {
 		clientX: 1,
 		clientY: 2
-	})), {
-		x: 1,
-		y: 2
-	})
+	})), [1, 2])
 
 	t.deepEqual(getClientXY(new TouchEvent("click", {
 		touches: [{
@@ -21,10 +18,7 @@ test("main", t => {
 			clientX: 1,
 			clientY: 2
 		}]
-	})), {
-		x: 1,
-		y: 2
-	})
+	})), [1, 2])
 
 	t.deepEqual(getClientXY(new TouchEvent("click", {
 		touches: [],
@@ -32,8 +26,5 @@ test("main", t => {
 			clientX: 1,
 			clientY: 2
 		}]
-	})), {
-		x: 1,
-		y: 2
-	})
+	})), [1, 2])
 })

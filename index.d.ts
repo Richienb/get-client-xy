@@ -9,10 +9,12 @@ Get coordinates from a mouse or touch event.
 ```
 const getClientXY = require("get-client-xy")
 
-const {x, y} = getClientXY(event)
+const [x, y] = getClientXY(event)
 ```
 */
-declare function getClientXY(event: MouseEvent | TouchEvent): {
-	x: number
+declare function getClientXY(event: MouseEvent | TouchEvent): [
+	x: number,
 	y: number
-}
+]
+
+export default getClientXY
