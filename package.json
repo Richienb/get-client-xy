@@ -31,9 +31,10 @@
   ],
   "dependencies": {},
   "devDependencies": {
-		"ava": "^3.14.0",
-		"eslint-config-richienb": "^0.5.0",
-		"xo": "^0.36.1"
+    "ava": "^3.14.0",
+    "browser-env": "^3.3.0",
+    "eslint-config-richienb": "^0.5.0",
+    "xo": "^0.36.1"
   },
   "xo": {
     "extends": "richienb"
