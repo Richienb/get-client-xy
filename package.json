@@ -1,6 +1,6 @@
 {
   "name": "get-client-xy",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Get coordinates from a mouse or touch event.",
   "repository": "https://github.com/Richienb/get-client-xy.git",
   "contributors": [
