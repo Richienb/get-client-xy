@@ -1,58 +1,35 @@
-/**
- * Get clientY/clientY from an event.
- * If index is passed, treat it as index of global touches, not the targetTouches.
- * Global touches include target touches.
- *
- * @module get-client-xy
- *
- * @param {Event} e Event raised, like mousemove
- *
- * @return {number} Coordinate relative to the screen
- */
-function getClientY (e, idx) {
-	// touch event
-	if (e.touches) {
-		if (arguments.length > 1) {
-			return findTouch(e.touches, idx).clientY
-		}
-		else {
-			return e.targetTouches[0].clientY;
-		}
+const getOriginalEvent = event => {
+	// TODO: Replace with `return event?.originalEvent ?? event?.detail?.originalEvent ?? event` when targeting newer browsers
+	if (event.originalEvent) {
+		return event.originalEvent
 	}
 
-	// mouse event
-	return e.clientY;
-}
-function getClientX (e, idx) {
-	// touch event
-	if (e.touches) {
-		if (arguments.length > idx) {
-			return findTouch(e.touches, idx).clientX;
-		}
-		else {
-			return e.targetTouches[0].clientX;
-		}
+	if (event.detail && typeof event.detail === "object" && event.detail.originalEvent) {
+		return event.detail.originalEvent
 	}
 
-	// mouse event
-	return e.clientX;
+	return event
 }
 
-function getClientXY (e, idx) {
-	return [getClientX.apply(this, arguments), getClientY.apply(this, arguments)];
-}
-
-function findTouch (touchList, idx) {
-	for (var i = 0; i < touchList.length; i++) {
-		if (touchList[i].identifier === idx) {
-			return touchList[i];
+const getClientLocation = (event, propertyName) => {
+	if (event.touches) {
+		if (event.touches.length > 0 && event.targetTouches.length > 0) {
+			return event.targetTouches[0][propertyName]
 		}
+
+		return event.changedTouches[0][propertyName]
+	}
+
+	return event[propertyName]
+}
+
+const getClientXY = event => {
+	event = getOriginalEvent(event)
+
+	return {
+		x: getClientLocation(event, "clientX"),
+		y: getClientLocation(event, "clientY")
 	}
 }
 
-
-getClientXY.x = getClientX;
-getClientXY.y = getClientY;
-getClientXY.findTouch = findTouch;
-
-module.exports = getClientXY;
+module.exports = getClientXY

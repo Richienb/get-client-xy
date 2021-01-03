@@ -1,14 +1,24 @@
 {
   "name": "get-client-xy",
-  "version": "1.2.0",
-  "description": "Get clientX/clientY from an event",
+  "version": "0.0.0",
+  "description": "Get coordinates from a mouse or touch event.",
+  "repository": "https://github.com/Richienb/get-client-xy.git",
+  "contributors": [
+    "Richie Bendall <richiebendall@gmail.com>",
+    "Deema Ywanov <dfcreative@gmail.com>"
+  ],
+  "license": "MIT",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "engines": {
+    "node": ">=10"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dfcreative/get-client-xy"
+  "scripts": {
+    "lint": "xo",
+    "test": "xo && ava"
   },
   "keywords": [
     "event",
@@ -19,10 +29,13 @@
     "mouseevent",
     "getBoundingClientRect"
   ],
-  "author": "Deema Ywanov <dfcreative@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dfcreative/get-client-xy/issues"
+  "dependencies": {},
+  "devDependencies": {
+		"ava": "^3.14.0",
+		"eslint-config-richienb": "^0.5.0",
+		"xo": "^0.36.1"
   },
-  "homepage": "https://github.com/dfcreative/get-client-xy"
+  "xo": {
+    "extends": "richienb"
+  }
 }
