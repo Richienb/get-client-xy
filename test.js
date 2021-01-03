@@ -1,7 +1,7 @@
 const test = require("ava")
 const getClientXY = require(".")
 
-require("browser-env")() // eslint-disable-line node/no-extraneous-require
+require("browser-env")()
 
 test("main", t => {
 	t.deepEqual(getClientXY(new MouseEvent("click", {
