@@ -13,7 +13,7 @@ npm install get-client-xy
 ## Usage
 
 ```js
-const getClientXY = require("get-client-xy")
+import getClientXY from "get-client-xy"
 
 const [x, y] = getClientXY(event)
 ```
