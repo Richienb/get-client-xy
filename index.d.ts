@@ -7,7 +7,7 @@ Get coordinates from a mouse or touch event.
 
 @example
 ```
-const getClientXY = require("get-client-xy")
+import getClientXY from "get-client-xy"
 
 const [x, y] = getClientXY(event)
 ```
